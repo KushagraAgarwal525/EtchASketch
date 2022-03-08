@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gridContainer = document.querySelector(".gridcontainer");
-    for (let i = 0; i < 16; i++) {
+    // i has to be less than n square
+    for (let i = 0; i < 256; i++) {
         const box = document.createElement('div');
         console.log(box);
         box.classList.add("gridbox");
