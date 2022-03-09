@@ -11,8 +11,11 @@
         else if (gridSize > 100){
             alert("Grid size cannot be greater than 100!");
         }
-        else {
+        else if (gridSize <= 0){
             alert("Grid size cannot be less than or equal to 0!")
+        }
+        else {
+            alert("Enter a number!")
         }
     }
 })
@@ -60,8 +63,9 @@ function drawGrid(gridSize) {
     for (let i = 0; i < (gridSize*gridSize); i++) {
         const box = document.createElement('div');
         box.classList.add("gridbox");
-        box.style.height = `${596/gridSize}px`;
-        box.style.width = `${596/gridSize}px`;
+        box.style.height = `${Math.round(596/gridSize)}px`;
+        box.style.width = `${Math.round(596/gridSize)}px`;
+        gridContainer.style["max-width"] = `${Math.round(596/gridSize)*gridSize}px`
         box.onmouseover = function() {
             box.style['background-color'] = "red";
         }
