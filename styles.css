@@ -1,11 +1,11 @@
 .gridcontainer {
     display: flex;
     flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
 }
 
 .gridbox {
-    height: 10px;
-    width: 10px;
     border: 1px solid black;
     border-collapse: collapse;
 }
