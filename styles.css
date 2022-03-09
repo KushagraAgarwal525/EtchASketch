@@ -4,7 +4,7 @@ html, body {
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
     padding: 30px 0px 0px 0px;
@@ -28,7 +28,7 @@ body {
 .gridcontainer {
     display: flex;
     flex-wrap: wrap;
-    max-width: 936px;
+    max-width: 596px;
     height: auto;
     border: 2px solid black;
 }
