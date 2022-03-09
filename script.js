@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     drawGrid(16);
     document.querySelector(".clrbtn").onclick = function() {
-        const gridSize = Number(prompt("Enter grid size:"))
         document.querySelectorAll(".gridbox").forEach(box => {
             box.style['background-color'] = "white";
         })
+        const gridSize = Number(prompt("Enter grid size:"))
         drawGrid(gridSize);
     }
 })
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let colorStatus = true;
 
 document.addEventListener('keypress', e => {
+    console.log("clicked")
     console.log(e);
     if (e.code === "KeyQ") {
         if (colorStatus){
@@ -35,26 +36,29 @@ document.addEventListener('keypress', e => {
 function colorCurrentBox(event) {
     var x = event.clientX, y = event.clientY;
     const box = document.elementFromPoint(x, y)
-    if (box.nodeName == "DIV") {
+    if (box.nodeName === "DIV") {
         box.style['background-color'] = "red";
     }
     document.removeEventListener('mousemove', colorCurrentBox);
+    return;
 }
 
+
 function drawGrid(gridSize) {
+    console.log("Drawing grid!");
     document.querySelectorAll(".gridbox").forEach(box => {
         box.remove();
     })
     const gridContainer = document.querySelector(".gridcontainer");
-    // create square of gridSize boxes
-    for (let i = 0; i < gridSize^2; i++) {
+    for (let i = 0; i < (gridSize*gridSize); i++) {
         const box = document.createElement('div');
         box.classList.add("gridbox");
-        box.style.height = `${(960/gridSize) - 2.5}px`;
-        box.style.width = `${(960/gridSize) - 2.5}px`;
+        box.style.height = `${960/gridSize}px`;
+        box.style.width = `${960/gridSize}px`;
         box.onmouseover = function() {
-            this.style['background-color'] = "red";
+            box.style['background-color'] = "red";
         }
-        document.querySelector(".gridcontainer").appendChild(box);
+        gridContainer.appendChild(box);
     }
+    return;
 }
