@@ -1,6 +1,42 @@
+html, body {
+    height: 96%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0px 0px 0px;
+}
+
+.btns, .shortcuts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    width: 270px;
+    height: 70px;
+    font-size: x-large;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+
 .gridcontainer {
     display: flex;
     flex-wrap: wrap;
-    width: 960px;
-    height: 960px;
+    max-width: 936px;
+    height: auto;
+    border: 2px solid black;
+}
+
+.shortcuts h3 {
+    font-size: xx-large;
+}
+
+.shortcuts p {
+    font-size: x-large;
 }

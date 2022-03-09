@@ -5,7 +5,12 @@
             box.style['background-color'] = "white";
         })
         const gridSize = Number(prompt("Enter grid size:"))
-        drawGrid(gridSize);
+        if (gridSize <= 100){
+            drawGrid(gridSize);
+        }
+        else {
+            alert("Grid size cannot be greater than 100!");
+        }
     }
 })
 
@@ -45,7 +50,6 @@ function colorCurrentBox(event) {
 
 
 function drawGrid(gridSize) {
-    console.log("Drawing grid!");
     document.querySelectorAll(".gridbox").forEach(box => {
         box.remove();
     })
@@ -53,8 +57,8 @@ function drawGrid(gridSize) {
     for (let i = 0; i < (gridSize*gridSize); i++) {
         const box = document.createElement('div');
         box.classList.add("gridbox");
-        box.style.height = `${960/gridSize}px`;
-        box.style.width = `${960/gridSize}px`;
+        box.style.height = `${936/gridSize}px`;
+        box.style.width = `${936/gridSize}px`;
         box.onmouseover = function() {
             box.style['background-color'] = "red";
         }
